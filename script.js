@@ -78,13 +78,19 @@ console.log(scoresLow);
 // Task 9
 console.log("Task 9");
 const votes = ["yes", "no", "yes", "yes", "no", "yes"];
+// const result = votes.reduce((acc, item) => {
+//     if(item === "yes") {
+//         acc[item] += 1;
+//     }else
+//         acc[item] += 1;
+//     return acc;
+// }, {yes: 0, no: 0})
+// console.log(result);
 const result = votes.reduce((acc, item) => {
-    if(item === "yes") {
-        acc[item] += 1;
-    }else
-        acc[item] += 1;
+    acc[item] ||= 0; // This is a modern way
+    acc[item] += 1;
     return acc;
-}, {yes: 0, no: 0})
+},{})
 console.log(result);
 
 
